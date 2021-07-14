@@ -1,0 +1,103 @@
+//import
+@import "variables.scss";
+
+//mixins
+@mixin box-res() {
+  padding: 0;
+  margin: 0;
+}
+
+@mixin debug-border(){
+  border:1px solid red;
+}
+
+@mixin box-flex-body-row() {
+  display: flex;
+  flex-direction: row;
+}
+
+@mixin box-flex-body-column() {
+  display: flex;
+  flex-direction: column;
+}
+
+
+@mixin headerbox(){
+  //header name space
+  padding: 1%; 
+  line-height: 2;
+  color:#efefef;
+}
+
+@mixin newsfeedbgopt{
+  //backgroundoptions
+  background-position: 100%;
+  background: fixed;
+  background-image: $newsfeed-bg;
+  display: flex;
+  flex-direction: row;
+}
+
+@mixin smart-box-padding-border(){
+  padding: 2% 2%;
+}
+
+@mixin hoverline(){
+  color:#31b4aa;
+  border-bottom: 1px solid #31b4aa;
+}
+
+//fonts
+@mixin navfont() {
+  letter-spacing: 2px;
+  font-size:14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-align: center;
+  color:#efefef;
+  font-family: $font-text;
+}
+
+@mixin storyfont() {
+  letter-spacing: 2px;
+  line-height: 1.5;
+  font-size:15px;
+  font-weight: 700;
+  text-transform: capitalize;
+  color:#efefef;
+  font-family: $font-text;
+}
+
+//footer styles
+
+@mixin checkbox(){
+
+
+@include box-flex-body-row;
+//box size options
+border-radius: 15px;
+position: relative;
+
+//glass
+background: rgba( 26, 24, 24, 0.40 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 1.5px );
+-webkit-backdrop-filter: blur( 1.5px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+@mixin innerCheckBox(){
+  @include box-flex-body-column;
+  position: absolute;
+  height: 209px;
+  width: 270px;
+
+//glass
+background: rgba( 9, 8, 8, 0.70 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 20.0px );
+-webkit-backdrop-filter: blur( 20.0px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+}

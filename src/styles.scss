@@ -1,0 +1,353 @@
+/*variables*/
+@import './globalstyles/mixins.scss';
+@import './globalstyles/variables.scss';
+
+
+*{
+  @include box-res();  
+  //@include debug-border;
+}
+
+.bodyrouter{
+  //@include debug-border;
+  background-color: $navigation-bg;
+}
+
+a{
+  //@include debug-border;
+  text-decoration: none;
+  color:#efefef;
+}
+
+li{
+  //@include debug-border;
+  list-style-type: none;
+}
+
+//styling places
+
+.newsfeed{
+  // left & right
+  //@include debug-border;
+ @include box-flex-body-column;
+ @include newsfeedbgopt;
+
+ width: 100%;
+padding-left:5%;
+
+}
+
+.headerspot{
+  //header full opt
+  //@include debug-border;
+  @include headerbox;
+  @include box-flex-body-column;
+  @include checkbox;
+  font-family: $font-text;
+}
+
+.mainpage{ 
+  //newsfeed
+  //@include debug-border;
+  font-family: $font-text;
+  @include box-flex-body-column;
+  margin-left: 5%;
+  margin-right: 5%;
+
+ 
+}
+
+ //newsfeed styles
+.story {
+  //@include debug-border;
+  @include storyfont;
+  @include box-flex-body-row;
+  @include smart-box-padding-border;
+  margin:1%;
+  margin-left:20%;
+
+  .story-box {
+    //@include debug-border;
+    @include smart-box-padding-border;
+    width: 90%;
+    height: auto;
+    
+    //glass opt
+    background: rgba( 18, 17, 17, 0.55 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 3.0px );
+    -webkit-backdrop-filter: blur( 3.0px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+ }
+
+  .story-title{
+    //@include debug-border;
+    @include box-flex-body-row;
+    justify-content: space-between;
+    line-height: 1.5;
+
+    :hover{
+      //@include debug-border;
+      @include hoverline;
+    }
+  }
+   .story-info{
+    //@include debug-border;
+    justify-content: space-around;
+    @include box-flex-body-row;
+    line-height: 2;
+    margin-top:3.5%;
+
+    .spacer{
+      //@include debug-border;
+    display: none;
+    }
+
+   .comments, .by, .time{
+     //@include debug-border;
+    font-size: 15px;
+    font-weight: 400 ;
+
+    :hover{
+      //@include debug-border;
+      @include hoverline;
+    }
+  }
+}
+}
+
+//footer style
+.footer-outer{
+  //@include debug-border;
+  margin-top:6%;
+  @include box-flex-body-row;
+  width: 25%;
+  height: auto;
+  position:fixed;
+
+  .footer-inner{ 
+    //@include debug-border;
+    @include box-flex-body-column;
+  }
+
+//footer navigation option
+.footer-inner-box{
+  //@include debug-border;
+  @include headerbox;
+  font-family: $font-text;
+  margin:auto;
+  width: 350px;
+  height: 200px;
+
+.footer-navlink{
+  //@include debug-border;
+  @include navfont;
+  color:#efefef;
+  @include innerCheckBox;
+  height: 140px;
+  width: 200px;
+  padding:6%;
+  
+.footer-navlist{
+  //@include debug-border;
+  @include box-flex-body-column;
+
+  .top, .new, .best{
+    //@include debug-border;
+ text-align: left;
+ font-size: 20px;
+ line-height: 2.3;
+  }
+  
+  :hover{
+    //@include debug-border;
+  background-color:#31b4aa ;
+  border-radius: 12px;
+  width: auto;
+  height: auto;
+  align-items: center;
+}}}}
+
+//tick box options
+.mainbox{
+  //@include debug-border;
+  @include checkbox;
+  justify-content: center;
+  width: 350px;
+  height: 300px;
+
+  .goalheader{
+    //@include debug-border;
+    display: block;
+    text-align:left;
+    width:65%;
+    height: auto;
+    padding: 10%;
+    position: absolute;
+
+    span{
+      //@include debug-border;
+     @include storyfont;
+     font-size: 19px !important;
+    }
+  }
+
+  .tickboxs_mainbox{
+    //@include debug-border;
+  @include innerCheckBox;
+  margin-left:-15%;
+  z-index: 1;
+  align-content: center;
+
+    .tickbox{
+      //@include debug-border;
+      @include box-flex-body-row;
+      @include storyfont;
+      margin-top:3.5%;
+      margin-left:2%;
+      justify-content: space-between;
+     
+      label{
+        //@include debug-border;
+        border: none;
+        color:#8d91a4;
+        font-size: 16px;
+        line-height: 1.8;
+        align-items: center;
+        margin-left:15px;
+        text-align: left;
+      }
+    } 
+  }
+
+  //image
+  .box-beaver{
+    //@include debug-border;
+    width: 330px;
+    height: 300px;
+    position: relative;
+    margin-left:40%;
+    z-index: 0;
+  }
+}
+}
+
+//loading screen option
+.loading {  }
+//@include debug-border;
+  #loader {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 99999;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.5)
+    );
+
+  .message {
+    //@include debug-border;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform: translate(-5%, -5%);
+    font-size: 100px;
+    top: 50%;
+    left: 52.5%;
+    color: #31b4aa;
+  }
+}
+
+.loader-open {
+  //@include debug-border;
+  overflow: hidden;
+}
+.hide {
+  //@include debug-border;
+  display: none;
+}
+.active {
+  //@include debug-border;
+  font-weight: bold;
+}
+
+//responsive
+@media only screen and (max-width: 899px) and (min-width: 300px){
+  
+  .right_footer{
+    //@include debug-border;
+    display: none;
+  }
+
+  .mainpage{
+    //@include debug-border;
+    margin:0;
+  }
+  .story{
+    margin-left:0;
+  }
+
+.newsfeed{
+  //@include debug-border;
+  paddin-left: 0%;
+}
+
+.headerspot{
+  //@include debug-border;
+  @include box-flex-body-column;
+}
+
+  .mainheader{
+    //@include debug-border;
+    font-family: $font-text;
+  }
+
+  .mainheader{
+    //@include debug-border;
+    margin: auto;
+  }
+
+  .header-inner-box{
+    //@include debug-border;
+    @include box-flex-body-row;
+    flex-direction: space-between;
+
+  .navlink{
+    //@include debug-border;
+    @include navfont;
+    color:#efefef;
+    margin: auto;
+    
+    .navlist{
+      //@include debug-border;
+    @include box-flex-body-row;
+    justify-content: space-between;
+  
+    .top, .new, .best{
+      //@include debug-border;
+    margin:2%;
+    }
+    
+    :hover{
+      //@include debug-border;
+    background-color:#31b4aa ;
+    border-radius: 12px;
+    width: auto;
+    height: auto;
+    align-items: center;
+    }
+    }
+  }
+}
+}
+
+ @media only screen and (min-width: 900px){
+  .header-inner-box{
+    //@include debug-border;
+    display: none;
+  }
+}
